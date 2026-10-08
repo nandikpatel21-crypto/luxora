@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Cinzel:wght@400..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  /* LUXORA Exact Brand Color Tokens */
+  --bg-primary: #FDFBF3;
+  --bg-dark: #07120F;
+  --gold-primary: #C49A45;
+  --gold-secondary: #D8B46A;
+  --text-main: #101713;
+  --text-muted: #77746C;
+  --border-champagne: #E6D9BE;
+  --bg-white: #FFFFFF;
+
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FDFBF3;
+  color: #101713;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Typography & Utility Classes */
+.font-serif-title {
+  font-family: var(--font-serif);
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
+/* Premium Metallic Gold Text & BG Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D8B46A 0%, #C49A45 50%, #9E792F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(to right, #D8B46A, #C49A45, #9E792F) 1;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #D8B46A 0%, #C49A45 50%, #B08734 100%);
+}
+
+.gold-button {
+  background-color: #C49A45;
+  color: #07120F;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-button:hover {
+  background-color: #07120F;
+  color: #D8B46A;
+  box-shadow: 0 0 25px rgba(196, 154, 69, 0.35);
+}
+
+.dark-button {
+  background-color: #07120F;
+  color: #FDFBF3;
+  border: 1px solid #C49A45;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark-button:hover {
+  background-color: #C49A45;
+  color: #07120F;
+  border-color: #C49A45;
+}
+
+.gold-border-glow {
+  border: 1px solid #E6D9BE;
+  box-shadow: 0 4px 20px rgba(7, 18, 15, 0.04);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-border-glow:hover {
+  border-color: #C49A45;
+  box-shadow: 0 12px 35px rgba(196, 154, 69, 0.22);
+}
+
+/* Thin Metallic-Gold Divider Lines */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #C49A45 50%, transparent 100%);
+  opacity: 0.4;
+}
+
+.gold-divider-left {
+  height: 1px;
+  background: linear-gradient(90deg, #C49A45 0%, #E6D9BE 60%, transparent 100%);
+  opacity: 0.5;
+}
+
+/* Glassmorphism Luxury Overlay */
+.glass-panel-dark {
+  background: rgba(7, 18, 15, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(196, 154, 69, 0.3);
+}
+
+.glass-panel-light {
+  background: rgba(253, 251, 243, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #E6D9BE;
+}
+
+.glass-card-light {
+  background: #FFFFFF;
+  border: 1px solid #E6D9BE;
+  box-shadow: 0 10px 30px rgba(7, 18, 15, 0.05);
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FDFBF3;
+}
+::-webkit-scrollbar-thumb {
+  background: #E6D9BE;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C49A45;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(196, 154, 69, 0.18) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 3.5s infinite;
+}
+
+/* Subtle Floating Animation */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float-slow {
+  animation: floatGentle 6s ease-in-out infinite;
+}
